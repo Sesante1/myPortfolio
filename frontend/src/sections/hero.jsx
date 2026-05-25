@@ -1,6 +1,7 @@
 import React from "react";
 import { words } from "../constants/index";
 import Button from "../components/button";
+import ProfileImage from "../components/profileImage";
 
 const hero = () => {
   return (
@@ -15,7 +16,7 @@ const hero = () => {
           <div className="flex flex-col gap-7">
             <div className="hero-text">
               <h1>
-                Shaping
+                Building
                 <span className="slide">
                   <span className="wrapper">
                     {words.map((word) => (
@@ -34,8 +35,7 @@ const hero = () => {
                   </span>
                 </span>
               </h1>
-              <h1>into Real Projects</h1>
-              <h1>that Deliver Results</h1>
+              <h1>into Scalable Web Solutions</h1>
             </div>
 
             <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
@@ -52,9 +52,9 @@ const hero = () => {
           </div>
         </header>
         {/* Profile Picture */}
-        <figure>
-          <div className="rounded-md">
-            <img src="/images/GradPic.jpg" alt="Profile Picture" />
+        <figure className="flex items-center justify-center w-full h-full">
+          <div>
+            <ProfileImage />
           </div>
         </figure>
       </div>
