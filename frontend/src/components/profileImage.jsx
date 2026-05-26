@@ -13,7 +13,7 @@ const ProfileImage = () => {
         }
       `}</style>
 
-      <div className="w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] xl:w-[520px] xl:h-[710px]">
+      <div className="w-[200px] h-[280px] sm:w-[240px] sm:h-[320px] md:w-[300px] md:h-[400px] lg:w-[380px] lg:h-[520px] xl:w-[460px] xl:h-[640px]">
         <div className="float-card relative w-full h-full rounded-[20px] overflow-hidden shadow-lg">
           <img
             src="/images/GradPic.jpg"
