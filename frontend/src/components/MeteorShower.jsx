@@ -10,6 +10,15 @@ const MeteorShower = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
+    const stars = Array.from({ length: 200 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      radius: Math.random() * 1.5 + 0.2,
+      opacity: Math.random() * 0.8 + 0.2,
+      twinkleSpeed: Math.random() * 0.02 + 0.005, // how fast it pulses
+      twinkleDirection: Math.random() > 0.5 ? 1 : -1,
+    }));
+
     const meteors = Array.from({ length: 20 }, () => createMeteor(canvas));
 
     function createMeteor(canvas) {
@@ -21,6 +30,26 @@ const MeteorShower = () => {
         opacity: Math.random() * 0.7 + 0.3, // brightness
         width: Math.random() * 2 + 0.5, // trail thickness
       };
+    }
+
+    function drawStar(star) {
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+      ctx.fill();
+    }
+
+    // ── Twinkle update ──────────────────────────────────
+    function updateStar(star) {
+      star.opacity += star.twinkleSpeed * star.twinkleDirection;
+
+      if (star.opacity >= 1) {
+        star.opacity = 1;
+        star.twinkleDirection = -1;
+      } else if (star.opacity <= 0.1) {
+        star.opacity = 0.1;
+        star.twinkleDirection = 1;
+      }
     }
 
     function drawMeteor(meteor) {
@@ -41,7 +70,7 @@ const MeteorShower = () => {
       ctx.stroke();
     }
 
-    function update(meteor) {
+    function updateMeteor(meteor) {
       meteor.x += meteor.speed * 0.5;
       meteor.y += meteor.speed;
 
@@ -59,9 +88,15 @@ const MeteorShower = () => {
     let animationId;
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      stars.forEach((star) => {
+        drawStar(star);
+        updateStar(star);
+      })
+
       meteors.forEach((meteor) => {
         drawMeteor(meteor);
-        update(meteor);
+        updateMeteor(meteor);
       });
       animationId = requestAnimationFrame(animate);
     }
