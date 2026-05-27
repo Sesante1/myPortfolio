@@ -1,7 +1,8 @@
 import React from "react";
 import { words } from "../constants/index";
-import Button from "../components/button";
-import ProfileImage from "../components/profileImage";
+import Button from "../components/Button";
+import ProfileImage from "../components/ProfileImage";
+import MeteorShower from "../components/MeteorShower";
 
 const hero = () => {
   return (
@@ -9,6 +10,8 @@ const hero = () => {
       <div className="absolute top-0 left-0 z-10">
         <img src="/images/bg.png" alt="Hero Background" />
       </div>
+
+      <MeteorShower />
 
       <div className="hero-layout">
         {/* left hero hero content */}
@@ -22,7 +25,7 @@ const hero = () => {
                     {words.map((word) => (
                       <span
                         key={word.text}
-                        className="flex items-center md:gap-3 gap-1 pb-2"
+                        className="flex items-center md:gap-3 gap-1 pb-2 px-4"
                       >
                         <img
                           src={word.imagePath}
@@ -47,7 +50,7 @@ const hero = () => {
             <Button
               className="md:w-80 md:h-16 w-60 h-12"
               id="button"
-              text="See my work"
+              text="View my work"
             />
           </div>
         </header>
