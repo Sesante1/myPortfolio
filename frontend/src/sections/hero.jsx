@@ -4,12 +4,23 @@ import Button from "../components/Button";
 import ProfileImage from "../components/ProfileImage";
 import MeteorShower from "../components/MeteorShower";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 const hero = () => {
+  useGSAP(() => {
+    gsap.fromTo(
+      ".hero-text h1",
+      { x: -50, opacity: 0 },
+      { x: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power2.inOut" },
+    );
+  });
+
   return (
     <section id="hero" className="relative overflow-hidden">
-      <div className="absolute top-0 left-0 z-10">
+      {/* <div className="absolute top-0 left-0 z-10">
         <img src="/images/bg.png" alt="Hero Background" />
-      </div>
+      </div> */}
 
       <MeteorShower />
 
@@ -22,15 +33,15 @@ const hero = () => {
                 Building
                 <span className="slide">
                   <span className="wrapper">
-                    {words.map((word) => (
+                    {words.map((word, index) => (
                       <span
-                        key={word.text}
+                        key={index}
                         className="flex items-center md:gap-3 gap-1 pb-2 px-4"
                       >
                         <img
                           src={word.imagePath}
                           alt={word.Text}
-                          className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
+                          className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white"
                         />
                         <span>{word.Text}</span>
                       </span>
@@ -42,8 +53,8 @@ const hero = () => {
             </div>
 
             <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Hi, I'm Jomel, a passionate software developer with a knack for{" "}
-              <br />
+              Hi, I'm Jomel Sesante, a passionate software developer with a
+              knack for <br />
               turning innovative ideas into real-world applications.
             </p>
 
