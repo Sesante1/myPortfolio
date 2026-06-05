@@ -9,7 +9,7 @@ const aboutMe = () => {
           About Me
         </h1>
         <div className="flex flex-col md:flex-row items-center gap-10 mb-10">
-          <div className="relative w-540 h-110  overflow-hidden shadow-lg rounded-[20px]">
+          <div className="relative w-600 h-full overflow-hidden shadow-lg rounded-[20px]">
             <img
               src="/images/GradPic.jpg"
               alt="Profile"
@@ -17,7 +17,7 @@ const aboutMe = () => {
             />
           </div>
 
-          <div className=" p-6 rounded-lg">
+          <div className="p-6 rounded-lg">
             <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
               Hi, I’m Jomel, a recent IT graduate passionate about building
               responsive and user-friendly web applications.
