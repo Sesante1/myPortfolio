@@ -80,3 +80,30 @@ const techStackIcons = [
     rotation: [0, -Math.PI / 4, 0],
   },
 ];
+
+export const socialLinks = [
+  {
+    name: "GitHub",
+    handle: "your-username",
+    href: "https://github.com/Sesante1",
+    iconBg: "bg-white/[0.08]",
+    iconColor: "text-white",
+    icon: "images/github-icon.webp",
+  },
+  {
+    name: "LinkedIn",
+    handle: "your-profile",
+    href: "https://www.linkedin.com/in/jomel-sesante-1209b53a0",
+    iconBg: "bg-blue-500/20",
+    iconColor: "text-blue-300",
+    icon: "images/linkedin-icon.webp",
+  },
+  {
+    name: "Gmail",
+    handle: "jomelsesante1@gmail.com",
+    href: "mailto:jomelsesante1@gmail.com",
+    iconBg: "bg-white",
+    iconColor: "text-red-300",
+    icon: "images/gmail-icon.webp",
+  },
+];
