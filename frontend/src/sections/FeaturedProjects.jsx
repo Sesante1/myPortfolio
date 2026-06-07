@@ -1,6 +1,7 @@
 import React from "react";
 import { projects } from "../constants";
 import AnimatedCounter from "../components/AnimatedCounter";
+import HeaderTitle from "../components/HeaderTitle";
 
 const badgeColors = {
   blue: "bg-blue-500/10 border-blue-500/30 text-blue-300",
@@ -17,8 +18,7 @@ const FeaturedProjects = () => {
   return (
     <>
       <section id="projects" className="section-padding">
-
-        
+        <HeaderTitle title="Featured Projects" />
         <div className="mb-20" />
 
         <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">

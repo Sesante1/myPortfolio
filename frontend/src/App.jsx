@@ -6,6 +6,7 @@ import Contact from "./sections/Contact";
 import NavBar from "./components/NavBar";
 import FeaturedProjects from "./sections/FeaturedProjects";
 import Footer from "./components/Footer";
+import Skills from "./sections/Skills";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Hero />
       {/* <AboutMe /> */}
       <FeaturedProjects />
+      <Skills />
       <Contact />
       <Footer />
     </>

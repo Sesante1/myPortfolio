@@ -35,7 +35,7 @@ const NavBar = () => {
               <span className="underline"></span>
             </li>
             <li className="group">
-              <a href="#contact">Skills</a>
+              <a href="#skills">Skills</a>
               <span className="underline"></span>
             </li>
           </ul>
