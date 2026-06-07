@@ -40,9 +40,9 @@ const aboutMe = () => {
         </div>
       </div>
 
-      <div className="h-30" />
+      {/* <div className="h-30" /> */}
       <AnimatedCounter />
-      <div className="h-100" />
+      {/* <div className="h-100" /> */}
     </div>
   );
 };

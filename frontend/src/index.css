@@ -17,6 +17,7 @@ body {
 
 section {
   width: 100dvw;
+  scroll-margin-top: 80px
 }
 
 @theme {
