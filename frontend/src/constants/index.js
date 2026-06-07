@@ -87,7 +87,7 @@ const techStackIcons = [
 export const socialLinks = [
   {
     name: "GitHub",
-    handle: "your-username",
+    handle: "Sesante1",
     href: "https://github.com/Sesante1",
     iconBg: "bg-white/[0.08]",
     iconColor: "text-white",
@@ -95,7 +95,7 @@ export const socialLinks = [
   },
   {
     name: "LinkedIn",
-    handle: "your-profile",
+    handle: "Jomel Sesante",
     href: "https://www.linkedin.com/in/jomel-sesante-1209b53a0",
     iconBg: "bg-blue-500/20",
     iconColor: "text-blue-300",
