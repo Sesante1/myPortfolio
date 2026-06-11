@@ -7,11 +7,13 @@ import NavBar from "./components/NavBar";
 import FeaturedProjects from "./sections/FeaturedProjects";
 import Footer from "./components/Footer";
 import Skills from "./sections/Skills";
+import Chatbot from "./components/Chatbot";
 
 const App = () => {
   return (
     <>
       <CustomCursor />
+      <Chatbot />
 
       <NavBar />
       <Hero />
