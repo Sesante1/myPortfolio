@@ -25,13 +25,15 @@ Tools: Git, VS Code, Postman, MySQL, Firebase
 
 PROJECTS:
 1. Veehive — React Native car rental app with Stripe, Agora video calling, Firebase, and real-time chat.
-2. Sales Online — ASP.NET e-commerce site for Ethan's Appliance Center with VB.NET and SQL Server.
+2. Movie App — A movie discovery web app powered by the TMDB API.
+   Features: browse trending movies, search by title, view movie details, ratings, and overviews.
+   Tech: React Native, Tailwind CSS, TMDB API.
 3. Portfolio — This site, built with React and Tailwind CSS v4.
 
 CONTACT:
 GitHub: https://github.com/Sesante1
-LinkedIn: (your LinkedIn URL)
-Gmail: (your Gmail)
+LinkedIn: www.linkedin.com/in/jomel-sesante
+Gmail: jomelsesante1@gmail.com
 
 Only answer questions relevant to Jomel's portfolio.`;
 

@@ -185,7 +185,7 @@ export default function Chatbot() {
         className="w-12 h-12 rounded-full bg-white text-black-100 flex items-center justify-center
           text-xl hover:scale-105 hover:bg-white/90 transition-all duration-200 cursor-pointer"
       >
-        {open ? "✕" : "💬"}
+        {open ? "✕" : <img src="/images/chat-icon.svg" alt="Chat" className="w-8 h-8" />}
       </button>
     </div>
   );
