@@ -79,7 +79,7 @@ export default function Chatbot() {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
       {/* Chat window */}
       <div
-        className={`w-80 bg-black-100 border border-white/10 rounded-2xl overflow-hidden flex flex-col max-h-[460px]
+        className={`w-80 bg-black-100 border border-white/10 rounded-2xl overflow-hidden flex flex-col max-h-115
           transition-all duration-300 origin-bottom-right
           ${
             open
@@ -89,7 +89,7 @@ export default function Chatbot() {
       >
         {/* Header */}
         <div className="flex items-center gap-3 px-4 py-3 border-b border-white/[0.07]">
-          <div className="w-8 h-8 rounded-full bg-white text-black-100 flex items-center justify-center text-xs font-bold flex-shrink-0">
+          <div className="w-8 h-8 rounded-full bg-white text-black-100 flex items-center justify-center text-xs font-bold shrink-0">
             JS
           </div>
           <div className="flex-1">
@@ -139,13 +139,13 @@ export default function Chatbot() {
 
         {/* Suggestions */}
         {showSuggestions && (
-          <div className="flex flex-wrap gap-1.5 px-3 py-2 border-t border-white/[0.06]">
+          <div className="flex flex-wrap gap-1.5 px-3 py-2 border-t border-white/6">
             {SUGGESTIONS.map((s) => (
               <button
                 key={s}
                 onClick={() => ask(s)}
                 className="text-[11px] px-2.5 py-1 rounded-full border border-white/12
-                  text-white/50 hover:bg-white/[0.08] hover:text-white hover:border-white/25
+                  text-white/50 hover:bg-white/8 hover:text-white hover:border-white/25
                   transition-all duration-200 cursor-pointer"
               >
                 {s}
@@ -163,7 +163,7 @@ export default function Chatbot() {
             onKeyDown={(e) => e.key === "Enter" && send()}
             placeholder="Ask me anything..."
             disabled={loading}
-            className="flex-1 bg-white/[0.06] border border-white/10 rounded-xl px-3 py-2
+            className="flex-1 bg-white/6 border border-white/10 rounded-xl px-3 py-2
               text-[12.5px] text-white placeholder:text-white/25 outline-none
               focus:border-white/25 disabled:opacity-50 transition-colors"
           />
@@ -172,7 +172,7 @@ export default function Chatbot() {
             disabled={loading || !input.trim()}
             className="w-8 h-8 rounded-lg bg-white text-black flex items-center justify-center
               text-sm font-bold hover:bg-white/90 disabled:opacity-40
-              transition-all duration-150 cursor-pointer flex-shrink-0"
+              transition-all duration-150 cursor-pointer shrink-0"
           >
             ↑
           </button>
@@ -185,7 +185,11 @@ export default function Chatbot() {
         className="w-12 h-12 rounded-full bg-white text-black-100 flex items-center justify-center
           text-xl hover:scale-105 hover:bg-white/90 transition-all duration-200 cursor-pointer"
       >
-        {open ? "✕" : <img src="/images/chat-icon.svg" alt="Chat" className="w-8 h-8" />}
+        {open ? (
+          "✕"
+        ) : (
+          <img src="/images/chat-icon.svg" alt="Chat" className="w-8 h-8" />
+        )}
       </button>
     </div>
   );

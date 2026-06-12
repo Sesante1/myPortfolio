@@ -49,40 +49,6 @@ export const projects = [
   },
 ];
 
-// Tech Stack i
-const techStackIcons = [
-  {
-    name: "React Developer",
-    modelPath: "/models/react_logo-transformed.glb",
-    scale: 1,
-    rotation: [0, 0, 0],
-  },
-  {
-    name: "Python Developer",
-    modelPath: "/models/python-transformed.glb",
-    scale: 0.8,
-    rotation: [0, 0, 0],
-  },
-  {
-    name: "Backend Developer",
-    modelPath: "/models/node-transformed.glb",
-    scale: 5,
-    rotation: [0, -Math.PI / 2, 0],
-  },
-  {
-    name: "Interactive Developer",
-    modelPath: "/models/three.js-transformed.glb",
-    scale: 0.05,
-    rotation: [0, 0, 0],
-  },
-  {
-    name: "Project Manager",
-    modelPath: "/models/git-svg-transformed.glb",
-    scale: 0.05,
-    rotation: [0, -Math.PI / 4, 0],
-  },
-];
-
 // Social links
 export const socialLinks = [
   {
@@ -96,7 +62,7 @@ export const socialLinks = [
   {
     name: "LinkedIn",
     handle: "Jomel Sesante",
-    href: "https://www.linkedin.com/in/jomel-sesante-1209b53a0",
+    href: "https://www.linkedin.com/in/jomel-sesante",
     iconBg: "bg-blue-500/20",
     iconColor: "text-blue-300",
     icon: "images/linkedin-icon.webp",
