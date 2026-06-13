@@ -42,7 +42,7 @@ Only answer questions relevant to Jomel's portfolio.`;
       "https://api.groq.com/openai/v1/chat/completions",
       {
         method: "POST",
-        headers: {
+        headers: { 
           "Content-Type": "application/json",
           Authorization: `Bearer ${process.env.VITE_APP_GROQ_API_KEY}`,
         },
