@@ -16,6 +16,17 @@ export const counterItems = [
   { value: 15, suffix: "+", label: "Repositories Built" },
 ];
 
+export const badgeColors = {
+  blue: "bg-blue-500/10 border-blue-500/30 text-blue-300",
+  green: "bg-green-500/10 border-green-500/30 text-green-300",
+  orange: "bg-orange-500/10 border-orange-500/30 text-orange-300",
+  purple: "bg-purple-500/10 border-purple-500/30 text-purple-300",
+  pink: "bg-pink-500/10 border-pink-500/30 text-pink-300",
+  cyan: "bg-cyan-500/10 border-cyan-500/30 text-cyan-300",
+  yellow: "bg-yellow-500/10 border-yellow-500/30 text-yellow-300",
+  red: "bg-red-500/10 border-red-500/30 text-red-300",
+};
+
 // Featured projects
 export const projects = [
   {
