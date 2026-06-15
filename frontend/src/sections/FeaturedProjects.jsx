@@ -4,25 +4,24 @@ import AnimatedCounter from "../components/AnimatedCounter";
 import HeaderTitle from "../components/HeaderTitle";
 import { useState, useRef, useEffect } from "react";
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, isActive, onTap, onClose }) => {
   const cardRef = useRef(null);
-  const [tapped, setTapped] = useState(false);
 
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (cardRef.current && !cardRef.current.contains(e.target)) {
-        setTapped(false);
+        onClose();
       }
     };
     document.addEventListener("touchstart", handleClickOutside);
     return () => document.removeEventListener("touchstart", handleClickOutside);
-  }, []);
+  }, [onClose]);
 
   return (
     <div
       className="group relative overflow-hidden w-137.5 rounded-2xl bg-black-100 border border-black-50 aspect-4/3 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:border-white/10"
       ref={cardRef}
-      onClick={() => setTapped((t) => !t)}
+      onClick={onTap}
     >
       {/* Image */}
       <img
@@ -33,8 +32,8 @@ const ProjectCard = ({ project }) => {
 
       {/* Base info  */}
       <div
-        className={`absolute bottom-0 left-0 right-0 p-5 bg-linear-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-300
-          ${tapped ? "opacity-0" : "opacity-100"} group-hover:opacity-0`}
+        className={`absolute bottom-0 left-0 right-0 p-5 bg-linear-to-t from-black via-black/70 to-transparent transition-opacity duration-300
+          ${isActive ? "opacity-0" : "opacity-100"} group-hover:opacity-0`}
       >
         <h3 className="text-white font-semibold text-base">{project.title}</h3>
         <p className="text-white/50 text-xs mt-0.5">{project.description}</p>
@@ -43,7 +42,7 @@ const ProjectCard = ({ project }) => {
       {/* Hover overlay */}
       <div
         className={`absolute inset-0 bg-black/85 backdrop-blur-md flex flex-col justify-center p-6 transition-all duration-300
-          ${tapped ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"}
+          ${isActive ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"}
           group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto`}
         onClick={(e) => e.stopPropagation()}
       >
@@ -72,6 +71,8 @@ const ProjectCard = ({ project }) => {
 };
 
 const FeaturedProjects = () => {
+  const [activeCard, setActiveCard] = useState(null);
+
   return (
     <section id="projects" className="section-padding">
       <HeaderTitle title="Featured Projects" />
@@ -79,7 +80,17 @@ const FeaturedProjects = () => {
 
       <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">
         {projects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
+          <ProjectCard
+            key={project.title}
+            project={project}
+            isActive={activeCard == project.title}
+            onTap={() =>
+              setActiveCard((prev) =>
+                prev === project.title ? null : project.title,
+              )
+            }
+            onClose={() => setActiveCard(null)}
+          />
         ))}
       </div>
     </section>
